@@ -4,17 +4,35 @@
   resource_fields: controller.class.resource_fields.reject{|field| field.is_a? Hash},
   namespace: controller.class.namespace do |f| %>
     <h4>Types</h4>
-    <%= f.fields_for :types do |ot| %>
+    <%= f.fields_for :types do |type_form| %>
+    <div class="callout">
       <div class="grid-x grid-margin-x">
         <div class="cell auto">
-          <%= ot.input :name %>
+          <%= type_form.input :name %>
         </div>
         <div class="cell shrink align-self-bottom">
-          <%= ot.link_to_remove class: "button alert" do %>
+          <%= type_form.link_to_remove class: "button alert" do %>
           	<i class="fa fa-times" aria-hidden="true"></i>
           <% end %>
         </div>
       </div>
+      <div class="fits-form">
+        <h5>Fits</h5>
+        <%= type_form.fields_for :fits do |fit_form| %>
+          <div class="grid-x grid-margin-x nested">
+            <div class="cell auto">
+              <%= fit_form.input :name %>
+            </div>
+            <div class="cell shrink align-self-bottom">
+              <%= fit_form.link_to_remove class: "button alert" do %>
+                <i class="fa fa-times" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        <p><%= type_form.link_to_add "Add Fit", :fits, class: "button warning" %></p>
+      </div>
+    </div>
     <% end %>
     <p><%= f.link_to_add "Add Type", :types, class: "button warning" %></p>
 <%end%>
