@@ -3,5 +3,18 @@
   resource_name: controller.resource_class.name,
   resource_fields: controller.class.resource_fields,
   namespace: controller.class.namespace do |f| %>
-
+    <h4>Types</h4>
+    <%= f.fields_for :types do |ot| %>
+      <div class="grid-x grid-margin-x">
+        <div class="cell auto">
+          <%= ot.input :name %>
+        </div>
+        <div class="cell shrink align-self-bottom">
+          <%= ot.link_to_remove class: "button alert" do %>
+          	<i class="fa fa-times" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <p><%= f.link_to_add "Add Type", :types, class: "button warning" %></p>
 <%end%>
