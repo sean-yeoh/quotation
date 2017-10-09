@@ -10,6 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
+//= require jquery_nested_form
+//= require foundation
 //= require turbolinks
 //= require_tree .
+
+
+
+$(document).on('turbolinks:load', function() {
+	$(function(){ $(document).foundation(); });
+});
