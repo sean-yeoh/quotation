@@ -1,0 +1,65 @@
+<%= render "shared/page_header", title: resource_name.pluralize.titleize do %>
+  <%= link_to "New #{resource_name.titleize}", [:new, namespace, resource_name.underscore], class: "button primary header-button" if defined?(new) && new %>
+<% end %>
+
+<% if defined?(ransack_fields) && ransack_fields.present? %>
+  <div class="callout">
+    <h5>Filter By</h5>
+    <%= search_form_for @q, url: request.path do |f| %>
+      <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+        <% ransack_fields.each do |field| %>
+          <div class="cell">
+            <%= f.label field[:name] %>
+            <% if field[:options] %>
+              <%= f.send(field[:type], field[:name], field[:options], {}, multiple: field[:multiple], size: field[:size]) %>
+            <% else %>
+              <%= f.send(field[:type], field[:name]) %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="grid-x cell text-center">
+        <div class="cell">
+          <%= f.submit "Search", class: "button" %>
+          <%= link_to "Reset", request.path, class: "button secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <%resource_fields.each do |rf|%>
+        <th>
+            <% if sort %>
+              <%= sort_link(@q, rf, rf.to_s.humanize) %>
+            <% else %>
+              <%= rf.to_s.humanize %>
+            <% end %>
+        </th>
+      <%end%>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% resources.each do |resource| %>
+      <tr>
+        <% resource_fields.each do |rf| %>
+          <td>
+            <%= resource.send(rf) %>
+          </td>
+        <% end %>
+        <% if defined?(is_sti) && is_sti
+          resource = resource.becomes(Object.const_get(resource_name))
+        end %>
+        <td><%= link_to (defined?(show) ? show : "Show"), [namespace, resource] %></td>
+        <td><%= link_to edit, [:edit, namespace, resource] if defined?(edit) %></td>
+        <td><%= link_to destroy,[namespace, resource], method: :delete, data: { confirm: 'Are you sure?' } if defined?(destroy)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%=paginate resources%>

@@ -1,0 +1,15 @@
+<%= render "shared/page_header", title: "#{resource_name.titleize} ##{resource.id}" do %>
+  <%= link_to "Edit", [:edit, namespace, resource] %>
+    |
+  <%= link_to "Back", [namespace, resource.class.name.underscore.pluralize] %>
+<% end %>
+
+<dl>
+  <% resource_fields.each do |rf| %>
+    <% next if rf.is_a?(Hash) %>
+    <dt><%= rf.to_s.humanize %></dt>
+    <dd><%= resource.send(rf) %></dd>
+  <% end %>
+</dl>
+
+<%=yield(resource)%>

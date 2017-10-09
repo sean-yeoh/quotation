@@ -1,0 +1,7 @@
+<%= render 'shared/crude/form',
+  resource: @resource,
+  resource_name: controller.resource_class.name,
+  resource_fields: controller.class.resource_fields,
+  namespace: controller.class.namespace do |f| %>
+
+<%end%>

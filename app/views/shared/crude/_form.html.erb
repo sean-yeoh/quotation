@@ -1,0 +1,19 @@
+<%= render "shared/page_header", title: resource.persisted? ? "Editing #{resource_name.titleize} ##{resource.id}" : "New #{resource_name.titleize}" do %>
+  <% if resource.persisted? %>
+    <%= link_to "Show", [namespace, resource] %> |
+  <% end %>
+  <%= link_to "Back", [namespace, resource.class.name.underscore.pluralize] %>
+<% end %>
+
+<%= simple_nested_form_for([resource], html: {:multipart => true}) do |f| %>
+  <% resource_fields.each do |field_name| %>
+    <% if field_name == :currency %>
+      <%= f.input field_name, collection: Money::Currency.all.map{|curr| ["#{curr.name} (#{curr.iso_code})", curr.iso_code]} %>
+    <% else %>
+      <%= f.input field_name %>
+    <% end %>
+  <% end %>
+  <%= yield f %>
+
+  <%= f.button :submit %>
+<% end %>

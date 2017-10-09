@@ -13,7 +13,27 @@
 
   <body>
 
-    <%= yield %>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-off-canvas data-transition="overlap">
+        <!-- Your menu or Off-canvas content goes here -->
+        <%= render "layouts/offcanvas_menu" %>
+      </div>
 
+      <div class="off-canvas-content" data-off-canvas-content>
+        <!-- Your page content lives here -->
+        <%= render "layouts/topbar" %>
+        
+        <div class="grid-container">
+          <% flash.each do |name, msg| %>
+            <div class="row column">
+              <div class="callout <%= name %>">
+                <%= msg %>
+              </div>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

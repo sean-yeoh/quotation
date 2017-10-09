@@ -60,3 +60,6 @@ gem 'simple_form'
 gem 'nested_form'
 gem 'countries'
 gem 'country_select'
+gem 'ransack'
+gem 'kaminari'
+gem "font-awesome-rails"
