@@ -1,7 +1,7 @@
 <%= render 'shared/crude/form',
   resource: @resource,
   resource_name: controller.resource_class.name,
-  resource_fields: controller.class.resource_fields,
+  resource_fields: controller.class.resource_fields.reject{|field| field.is_a? Hash},
   namespace: controller.class.namespace do |f| %>
     <h4>Types</h4>
     <%= f.fields_for :types do |ot| %>
