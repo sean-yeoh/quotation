@@ -10,11 +10,11 @@ markup = Markup.find_or_initialize_by(type: "Markup::Percentage", value: 10, cou
 markup.save
 
 				 salty_short_sleeve_reg_skin_chic_price = [
-																										{from: 200, to: 299, amount: 25},
+																										{from: 200, to: 299, amount: 25, markup_ids: []},
 																										{from: 300, to: 499, amount: 18.8, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 17, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 15.5, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 15, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 15, markup_ids: [markup.id]}
 																									]
 
 						 salty_short_sleeve_saltykids_price = [
@@ -22,7 +22,7 @@ markup.save
 																										{from: 300, to: 499, amount: 15, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 13.5, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 12.5, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 12.5, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 12.5, markup_ids: [markup.id]}
 																									]
 
 			salty_long_sleeve_rag_reg_skin_chic_price = [
@@ -30,7 +30,7 @@ markup.save
 																										{from: 300, to: 499, amount: 21.5, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 20, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 19, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 18.5, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 18.5, markup_ids: [markup.id]}
 																									]
 
 							salty_tanktop_reg_skin_chic_price = [
@@ -38,7 +38,7 @@ markup.save
 																										{from: 300, to: 499, amount: 17, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 15.6, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 14.7, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 14, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 14, markup_ids: [markup.id]}
 																									]
 
 						salty_microfibre_round_simple_price = [
@@ -46,7 +46,7 @@ markup.save
 																										{from: 300, to: 499, amount: 23, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 22, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 19.5, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 18.5, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 18.5, markup_ids: [markup.id]}
 																									]
 
 							salty_microfibre_round_custom_price = [
@@ -54,7 +54,7 @@ markup.save
 																										{from: 300, to: 499, amount: 25.5, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 24.3, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 21.5, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 20.5, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 20.5, markup_ids: [markup.id]}
 																									]
 
 						 salty_microfibre_polo_simple_price = [
@@ -62,7 +62,7 @@ markup.save
 																										{from: 300, to: 499, amount: 26.5, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 25, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 24, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 23, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 23, markup_ids: [markup.id]}
 																									]
 
 						 salty_microfibre_polo_custom_price = [
@@ -70,7 +70,7 @@ markup.save
 																										{from: 300, to: 499, amount: 29, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 26.5, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 25, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 24.7, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 24.7, markup_ids: [markup.id]}
 																									]
 
 						 						salty_polo_simple_price = [
@@ -78,7 +78,7 @@ markup.save
 																										{from: 300, to: 499, amount: 31, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 29, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 26.4, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 25.5, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 25.5, markup_ids: [markup.id]}
 																									]
 
 						 						salty_polo_custom_price = [
@@ -86,7 +86,7 @@ markup.save
 																										{from: 300, to: 499, amount: 32, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 30.3, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 28, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 26.5, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 26.5, markup_ids: [markup.id]}
 																									]
 
 						 						  salty_sub_round_price = [
@@ -94,7 +94,7 @@ markup.save
 																										{from: 300, to: 499, amount: 41, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 38, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 34, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 31.5, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 31.5, markup_ids: [markup.id]}
 																									]
 
 						 							 salty_sub_polo_price = [
@@ -102,7 +102,7 @@ markup.save
 																										{from: 300, to: 499, amount: 43, markup_ids: [markup.id]},
 																										{from: 500, to: 999, amount: 41, markup_ids: [markup.id]},
 																										{from: 1000, to: 2999, amount: 37, markup_ids: [markup.id]},
-																										{from: 3000, to: 3000, amount: 34, markup_ids: [markup.id]},
+																										{from: 3000, to: 3000, amount: 34, markup_ids: [markup.id]}
 																									]
 
 													gildan_long_sleeve_price = [
@@ -306,53 +306,57 @@ saltycustoms.save
 
 saltycustoms_types_and_fits.each do |type_item|
 	type = saltycustoms.types.find_or_initialize_by(name: type_item[:type])
-	type_item[:fits].each do |fit_name|
-		type.fits.find_or_initialize_by(name: fit_name)
+	type_item[:fits].each do |fit_item|
+		fit = type.fits.find_or_initialize_by(name: fit_item[:name])
+		fit_item[:pricing].each do |price_range|
+			price_range = fit_item.price_ranges.find_or_initialize_by(from: price_range[:from], to: price_range[:to], amount: price_range[:amount], markup_ids: price_ranges[:markup_ids])
+		end
 	end
 	type.save
 end
 
-gildan = Brand.find_or_initialize_by(name: "Gildan")
-gildan.save
 
-gildan_types_and_fits.each do |type_item|
-	type = gildan.types.find_or_initialize_by(name: type_item[:type])
-	type_item[:fits].each do |fit_name|
-		type.fits.find_or_initialize_by(name: fit_name)
-	end
-	type.save
-end
+# gildan = Brand.find_or_initialize_by(name: "Gildan")
+# gildan.save
 
-fotl = Brand.find_or_initialize_by(name: "Fruit of the Loom")
-fotl.save
+# gildan_types_and_fits.each do |type_item|
+# 	type = gildan.types.find_or_initialize_by(name: type_item[:type])
+# 	type_item[:fits].each do |fit_name|
+# 		type.fits.find_or_initialize_by(name: fit_name)
+# 	end
+# 	type.save
+# end
 
-fotl_types_and_fits.each do |type_item|
-	type = fotl.types.find_or_initialize_by(name: type_item[:type])
-	type_item[:fits].each do |fit_name|
-		type.fits.find_or_initialize_by(name: fit_name)
-	end
-	type.save
-end
+# fotl = Brand.find_or_initialize_by(name: "Fruit of the Loom")
+# fotl.save
 
-oren_sport = Brand.find_or_initialize_by(name: "Oren Sport")
-oren_sport.save
+# fotl_types_and_fits.each do |type_item|
+# 	type = fotl.types.find_or_initialize_by(name: type_item[:type])
+# 	type_item[:fits].each do |fit_name|
+# 		type.fits.find_or_initialize_by(name: fit_name)
+# 	end
+# 	type.save
+# end
 
-oren_sport_types_and_fits.each do |type_item|
-	type = oren_sport.types.find_or_initialize_by(name: type_item[:type])
-	type_item[:fits].each do |fit_name|
-		type.fits.find_or_initialize_by(name: fit_name)
-	end
-	type.save
-end
+# oren_sport = Brand.find_or_initialize_by(name: "Oren Sport")
+# oren_sport.save
 
-budget = Brand.find_or_initialize_by(name: "Budget")
-budget.save
+# oren_sport_types_and_fits.each do |type_item|
+# 	type = oren_sport.types.find_or_initialize_by(name: type_item[:type])
+# 	type_item[:fits].each do |fit_name|
+# 		type.fits.find_or_initialize_by(name: fit_name)
+# 	end
+# 	type.save
+# end
 
-budget_types_and_fits.each do |type_item|
-	type = budget.types.find_or_initialize_by(name: type_item[:type])
-	type_item[:fits].each do |fit_name|
-		type.fits.find_or_initialize_by(name: fit_name)
-	end
-	type.save
-end
+# budget = Brand.find_or_initialize_by(name: "Budget")
+# budget.save
+
+# budget_types_and_fits.each do |type_item|
+# 	type = budget.types.find_or_initialize_by(name: type_item[:type])
+# 	type_item[:fits].each do |fit_name|
+# 		type.fits.find_or_initialize_by(name: fit_name)
+# 	end
+# 	type.save
+# end
 
