@@ -6,6 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+markup = Markup.find_or_initialize_by(type: "Markup::Percentage", value: 10, country_code: "SG")
+markup.save
+
+saltycustoms_short_sleeve_reg_skin_chic_pricing = [
+																										{from: 200, to: 299, amount: 25},
+																										{from: 300, to: 499, amount: 18.8, markup_ids: [markup.id]},
+																										{from: 500, to: 999, amount: 17, markup_ids: [markup.id]},
+																										{from: 200, to: 299, amount: 15.5, markup_ids: [markup.id]},
+																										{from: 200, to: 299, amount: 15, markup_ids: [markup.id]},
+																									]
+
 saltycustoms_types_and_fits = [
 																{type: "Short Sleeve", fits: ["Regular Fit", "Skin Fit", "Chic Fit", "Saltykids"]},
 																{type: "Long Sleeve", fits: ["Regular Fit", "Skin Fit", "Chic Fit"]},

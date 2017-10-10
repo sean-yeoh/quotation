@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010024617) do
+ActiveRecord::Schema.define(version: 20171010033053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(version: 20171010024617) do
     t.string "country_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "markups_price_ranges", id: false, force: :cascade do |t|
+    t.bigint "price_range_id", null: false
+    t.bigint "markup_id", null: false
   end
 
   create_table "price_ranges", force: :cascade do |t|

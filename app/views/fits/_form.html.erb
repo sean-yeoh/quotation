@@ -1,0 +1,36 @@
+<%= render 'shared/crude/form',
+  resource: @resource,
+  resource_name: controller.resource_class.name,
+  resource_fields: [],
+  namespace: controller.class.namespace do |f| %>
+    <label><strong>Brand</strong></label>
+    <p><%= @resource.brand_name %></p>
+    
+    <label><strong>Type</strong></label>
+    <p><%= @resource.type_name %></p>
+
+    <%= f.input :name %>
+    <h4>Price Ranges</h4>
+    <%= f.fields_for :price_ranges do |pr_form| %>
+      <div class="grid-x grid-margin-x price-range-form">
+        <div class="cell small-6 large-auto">
+          <%= pr_form.input :from %>
+        </div>
+        <div class="cell small-6 large-auto">
+          <%= pr_form.input :to %>
+        </div>
+        <div class="cell small-3 large-auto">
+          <%= pr_form.input :amount, label: "Amount in #{Money.default_currency.iso_code}" %>
+        </div>
+         <div class="cell small-7 large-auto">
+          <%= pr_form.association :markups, label: "Markups in #{Money.default_currency.iso_code}", label_method: :markup_name, input_html: {size: 3} %>
+        </div>
+        <div class="cell small-2 large-shrink align-self-middle">
+          <%= pr_form.link_to_remove class: "button alert" do %>
+          	<i class="fa fa-times" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <p><%= f.link_to_add "Add Price Range", :price_ranges, class: "button warning" %></p>
+<%end%>

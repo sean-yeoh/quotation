@@ -10,4 +10,8 @@ class Fit < ApplicationRecord
   def type_name
   	type.name
   end
+
+  def display_name
+  	"#{brand_name} - #{type_name} - #{name}"
+  end
 end

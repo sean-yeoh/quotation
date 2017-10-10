@@ -32,3 +32,21 @@ dl {
 		margin-bottom: $global-margin;
 	}
 }
+
+
+.grid-container {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  .grid-container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+.price-range-form {
+  border-bottom: 1px solid $medium-gray;
+  margin-bottom: 0.5 * $global-margin;
+}
