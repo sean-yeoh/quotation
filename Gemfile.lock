@@ -240,7 +240,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  countries
   country_select
   font-awesome-rails
   foundation-rails

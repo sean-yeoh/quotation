@@ -10,19 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009131842) do
+ActiveRecord::Schema.define(version: 20171010024617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +29,24 @@ ActiveRecord::Schema.define(version: 20171009131842) do
     t.index ["type_id"], name: "index_fits_on_type_id"
   end
 
+  create_table "markups", force: :cascade do |t|
+    t.string "type"
+    t.integer "value"
+    t.string "country_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "price_ranges", force: :cascade do |t|
+    t.integer "from"
+    t.integer "to"
+    t.integer "amount_cents", default: 0
+    t.bigint "fit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fit_id"], name: "index_price_ranges_on_fit_id"
+  end
+
   create_table "types", force: :cascade do |t|
     t.string "name"
     t.bigint "brand_id"
@@ -44,5 +56,6 @@ ActiveRecord::Schema.define(version: 20171009131842) do
   end
 
   add_foreign_key "fits", "types"
+  add_foreign_key "price_ranges", "fits"
   add_foreign_key "types", "brands"
 end

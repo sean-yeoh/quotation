@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
+  from: 1
+  to: 
+  amount_cents: 1
+  fit: one
 
 two:
-  code: MyString
+  from: 1
+  to: 
+  amount_cents: 1
+  fit: two

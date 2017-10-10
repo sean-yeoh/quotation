@@ -1,0 +1,10 @@
+<%= render 'shared/crude/form',
+  resource: @resource,
+  resource_name: controller.resource_class.name,
+  resource_fields: [],
+  namespace: controller.class.namespace do |f| %>
+  	<%= f.input :type, collection: controller.resource_class.types %>
+  	<%= f.input :value %>
+  	<%= label_tag :country %>
+  	<%= f.country_select :country_code, priority_countries: ["MY", "SG"] %>
+<%end%>

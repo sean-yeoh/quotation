@@ -1,0 +1,12 @@
+<%= render "shared/crude/index",
+  resource_name: controller.resource_class.name,
+  new: true,
+  treat_as: controller.class.treat_as,
+  resources: @resources,
+  resource_fields: controller.class.presentation_fields,
+  sort: true,
+  namespace: controller.class.namespace,
+  ransack_fields: controller.class.ransack_fields,
+  destroy: "Destroy",
+  edit: "Edit"
+%>

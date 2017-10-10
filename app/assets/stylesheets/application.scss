@@ -20,3 +20,15 @@
 .title-bar {
 	margin-bottom: $global-margin;
 }
+
+select {
+-webkit-appearance: none;
+   -moz-appearance: none;
+        appearance: none;
+}
+
+dl {
+	dd {
+		margin-bottom: $global-margin;
+	}
+}

@@ -52,8 +52,8 @@
             <%= resource.send(rf) %>
           </td>
         <% end %>
-        <% if defined?(is_sti) && is_sti
-          resource = resource.becomes(Object.const_get(resource_name))
+        <% if defined?(treat_as) && treat_as
+          resource = resource.becomes(treat_as)
         end %>
         <td><%= link_to (defined?(show) ? show : "Show"), [namespace, resource] %></td>
         <td><%= link_to edit, [:edit, namespace, resource] if defined?(edit) %></td>
