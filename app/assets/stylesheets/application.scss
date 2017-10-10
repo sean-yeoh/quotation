@@ -15,7 +15,6 @@
 @import "foundation_and_overrides";
 @import "font-awesome";
 @import "page_header";
-@import "brands";
 
 .title-bar {
 	margin-bottom: $global-margin;
@@ -46,7 +45,17 @@ dl {
   }
 }
 
+.fits-form-nested {
+  padding-left: $global-padding * 2;
+}
+
 .price-range-form {
   border-bottom: 1px solid $medium-gray;
   margin-bottom: 0.5 * $global-margin;
+}
+
+.fits-table {
+  td {
+    padding: 0.2rem 0.625rem 0.2rem ;
+  }
 }

@@ -9,3 +9,31 @@
   destroy: "Destroy",
   edit: "Edit"
 %>
+
+<% Brand.all.includes(types: [{fits: :price_ranges}]).each do |brand| %>
+  <% fits = brand.fits %>
+  <% fit = fits.take %>
+  <table class="fits-table">
+    <caption><%= brand.name %></caption>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Fit</th>
+        <% fit.price_ranges.order(from: :asc).each do |price_range| %>
+          <th><%= price_range.from %> - <%= price_range.to %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% fits.each do |fit| %>
+        <tr>
+          <td><%= fit.type.name %></td>
+          <td><%= fit.name %></td>
+          <% fit.price_ranges.order(from: :asc).each do |price_range| %>
+            <td><%= humanized_money_with_symbol price_range.amount %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
